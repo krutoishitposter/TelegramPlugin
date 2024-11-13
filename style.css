@@ -1,0 +1,38 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0f1b;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Фон "Матрица" */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/2QeUkgr.png') repeat; /* изображение с зелёными символами */
+    opacity: 0.2;
+    animation: scrollMatrix 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes scrollMatrix {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+/* Маска анонимуса */
